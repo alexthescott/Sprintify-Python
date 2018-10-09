@@ -1,2 +1,3 @@
-# BPM Filtering Spotify Playlists
-  Using Spotipy to request BPM data for songs within a playlist, filtering out a range of tracks to be added to a future playlist
+# Filteres Spotify playlist by BPM for runners
+
+The goal of this project is to allow a user to define a tempo floor and ceiling, filtering a playlist so that only songs within that range are kept. The user has the option to create a new playlist, or add to an exising one. 
