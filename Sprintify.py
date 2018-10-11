@@ -2,7 +2,7 @@
 Spotipy.py for Python 2.7
 Alexander Scott
 October 2018
-Written to find songs in a playlist that are in a tempo range 
+Written to filter a Spotify playlist by a BPM range
 """
 
 import sys
@@ -13,8 +13,7 @@ import json
 # Create Spotify Object --------------------------------------------------------------------------
 
 # Ask for Spotify Username 
-#username = raw_input('Enter Spotify Username:')
-username = 'bassguitar1234'
+username = raw_input('Enter Spotify Username:')
 
 client_id = '0a6e845a19894708aadf65a22c4554e2'
 client_secret = '056e4729129e4b35ac82ab808a5fff67'
@@ -25,7 +24,7 @@ scope = "playlist-modify-private"
 token = util.prompt_for_user_token(username, scope, client_id, client_secret, redirect_uri)
 
 # Create Spotify Object
-sp = spotipy.Spotify(auth=token, requests_timeout=20)
+sp = spotipy.Spotify(auth=token)
 
 # Create Playlist Object
 playlists = sp.user_playlists(username)
@@ -204,7 +203,6 @@ if choiceNE.upper() == 'N':
 	for tempUri in pUriArray:
 		sp.user_playlist_add_tracks(username, newPlaylistUri[1:-1], tempUri)
 	print("Successfully added " + str(len(pUriArray)) + " songs to " + newPlaylistName)
-
 # Add songs to an existing playlist
 else: 
 	print_user_playlist(playlists)
@@ -223,8 +221,6 @@ else:
 	for tempUri in pUriArray:
 		sp.user_playlist_add_tracks(username, pId[choiceP2], tempUri)
 	print("Successfully added " + str(len(pUriArray)) + " songs to " + pTitles[choiceP2])
-
-	#add songs to playlist chosen
 
 
 
