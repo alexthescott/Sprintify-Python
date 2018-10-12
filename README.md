@@ -24,6 +24,10 @@ With the values you have just created. This will pair you Spotify account with y
 
 If you do not know your Spotify username, copy one of your existing Spotify playlist Uri's, and locate your username. Go to the Spotify desktop application, click the three dots, select share, then select "Copy Spotify URI." Your username is after "user:"
 
+In order to run the program, type
+
+$   Python Sprintify.py
+
 # Example Gif
 <img src="Sprintify_Example.gif" width="75%">
 
