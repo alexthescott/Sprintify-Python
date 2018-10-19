@@ -32,10 +32,6 @@ playlists = sp.user_playlists(username)
 
 # Main -------------------------------------------------------------------------------------------
 
-print("")
-print("Spotipy.py can filter songs by BPM for existing playlists, or generate a new playlist with tempo constraints")
-print("")
-
 pId = [] 
 pTitles = []
 pLength = []
@@ -51,6 +47,9 @@ for pCount, playlist in enumerate(playlists['items']):
     pLength.append(playlist['tracks']['total'])
     pId.append(playlist['id'])
     pCount += 1
+
+print("")
+print("Spotipy.py can filter songs by BPM for existing playlists, or generate a new playlist with tempo constraints")
 
 filterOrGenerate = SprintifyHelper.get_generate_or_filter()
 
