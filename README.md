@@ -33,7 +33,7 @@ In order to run the program, type:
 $   Python Sprintify.py
 
 # Example Gif
-<img src="Sprintify_Example.gif" width="75%">
+<img src="Sprintify_Example1.gif" width="75%">
 <img src="Sprintify_Example2.gif">
 
 # Spotipy
