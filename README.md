@@ -1,21 +1,21 @@
 
-# Sprintify: Designed for runners to filter Spotify playlists by BPM
+# Sprintify: Designed for runners to create BPM oriented Spotify playlists 
 
-The goal of this project is to allow a user to define a tempo floor and ceiling, filtering a playlist so that only songs within that range are kept. The user has the option to create a new playlist, or add to an exising one. 
+Sprintify allow users to define a BPM floor and ceiling, filtering a Spotify playlist so songs within range are kept. Additionally, Sprintify allows users to generate a new playlist. This is accomplished by obtaining song recommendations based on a song seed, which is then filtered by BPM. For both features, users can create a new playlist, or add to one they've already made.
 
 # Getting Started
 
-This project uses Python 2.7. You will need to install the Python dependency spotipy. The easiest way to do this is by using pip. If you have pip installed, type:
+This project uses Python 2.7. You will need to install the Python dependency spotipy. The easiest way to do this is by using pip. If you do not have pip installed, you can try bootstrap it from the standard library by typing:
 
-$   pip install spotipy
+$   python -m ensurepip --default-pip
 
 To check if you currently have pip installed, type:
 
 $   pip --version 
 
-If you do not have pip installed, you can to bootstrap it from the standard library by typing:
+If you have pip installed, type:
 
-$   python -m ensurepip --default-pip
+$   pip install spotipy
 
 Visit https://packaging.python.org/tutorials/installing-packages/#id13 if you have furthur issues. 
 
@@ -32,8 +32,13 @@ In order to run the program, type:
 
 $   Python Sprintify.py
 
-# Example Gif
-<img src="Sprintify_Example.gif" width="75%">
+# Filter Existing Playlist
+<img src="Sprintify_Example1.gif">
 
-# To-Do
-* Update project to Python 3
+# Generate Playlist
+<img src="Sprintify_Example2.gif">
+
+# Spotipy
+https://github.com/plamere/spotipy/blob/master/docs/index.rst
+
+https://spotipy.readthedocs.io/en/latest/
