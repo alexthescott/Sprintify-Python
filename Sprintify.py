@@ -49,8 +49,6 @@ for pCount, playlist in enumerate(playlists['items']):
     pCount += 1
 
 print("")
-print("Spotipy.py can filter songs by BPM for existing playlists, or generate a new playlist with tempo constraints")
-
 filterOrGenerate = SprintifyHelper.get_generate_or_filter()
 
 # Filter Path 
