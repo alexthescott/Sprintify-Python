@@ -24,7 +24,7 @@ By doing so, you will have created:
 * Client ID
 * Client Secret
 
-Open Sprintify.py, and enter your newly created Client ID and Client Secret. This will pair you Spotify account with your instance of Srintify.py, and will let you create and add to your playlists.
+Open Sprintify.py, and enter your newly created Client ID and Client Secret. This will pair you Spotify account with your instance of Sprintify.py, and will let you create and add to your playlists.
 
 If you do not know your Spotify username, copy one of your existing Spotify playlist Uri's, and locate your username. Go to the Spotify desktop application, click the three dots, select share, then select "Copy Spotify URI." Your username is after "user:"
 
