@@ -32,8 +32,10 @@ In order to run the program, type:
 
 $   Python Sprintify.py
 
-# Example Gif
-<img src="Sprintify_Example1.gif" width="75%">
+# Filter Existing Playlist
+<img src="Sprintify_Example1.gif">
+
+# Generate Playlist
 <img src="Sprintify_Example2.gif">
 
 # Spotipy
