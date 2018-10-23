@@ -21,7 +21,7 @@ client_secret = '056e4729129e4b35ac82ab808a5fff67'
 redirect_uri = 'http://www.google.com/'
 
 # Assign scope and creates token for Spotipy object
-scope = "playlist-modify-private"
+scope = "playlist-modify-public"
 token = util.prompt_for_user_token(username, scope, client_id, client_secret, redirect_uri)
 
 # Create Spotify Object
