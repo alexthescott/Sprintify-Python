@@ -114,7 +114,10 @@ elif filterOrGenerate == 'G':
 	tempArtistGenre = tempArtist['genres']
 
 	pUriArray = []
-	for i, e in enumerate(tUriArray): pUriArray.append(e[14:])
+
+	for tempUri in tUriArray: 
+		print(tempUri[14:])
+		pUriArray.append([tempUri[14:]])
 
 	if len(tempArtistGenre) == 0:
 		newPlaylistName = "Sprintify (" + str(tempoFloor) + '-' + str(tempoCeiling) + ")"
@@ -135,7 +138,6 @@ if choiceNE.upper() == 'N':
 	newPlaylistUri = json.dumps(playlists['id'], indent = 4)
 	print("Adding songs to " + newPlaylistName)
 	for tempUri in pUriArray:
-		tempUri = [tempUri]
 		sp.user_playlist_add_tracks(username, newPlaylistUri[1:-1], tempUri)
 	print("Successfully added " + str(len(pUriArray)) + " songs to " + newPlaylistName)
 
