@@ -16,8 +16,10 @@ import SprintifyHelper
 # Ask for Spotify Username 
 username = raw_input('Enter Spotify Username:')
 
-client_id = '0a6e845a19894708aadf65a22c4554e2'
-client_secret = '056e4729129e4b35ac82ab808a5fff67'
+# https://developer.spotify.com/dashboard/login
+# to create client id and client scret for your project
+client_id = ''
+client_secret = ''
 redirect_uri = 'http://www.google.com/'
 
 # Assign scope and creates token for Spotipy object
