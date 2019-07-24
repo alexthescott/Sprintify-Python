@@ -5,7 +5,7 @@ Sprintify allow users to define a BPM floor and ceiling, filtering a Spotify pla
 
 # Getting Started
 
-This project uses Python 2.7. You will need to install the Python dependency spotipy. The easiest way to do this is by using pip. If you do not have pip installed, you can try bootstrap it from the standard library by typing:
+This project uses Python 3. Use a package manager such as pip to install **spotipy**. The easiest way to do this is with pip. If you do not have pip installed, you can try bootstraping from the standard library by typing:
 
 ```bash
 python -m ensurepip --default-pip
