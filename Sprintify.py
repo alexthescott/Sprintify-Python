@@ -14,11 +14,11 @@ import SprintifyHelper
 # Create Spotify Object --------------------------------------------------------------------------
 
 # Ask for Spotify Username 
-#username = raw_input('Enter Spotify Username:')
-username = 'bassguitar1234'
+username = input('Enter Spotify Username:')
 
-client_id = '0a6e845a19894708aadf65a22c4554e2'
-client_secret = '21c13357cedf4078a1f4231090061d67'
+# Create @ https://developer.spotify.com/dashboard/login
+client_id = ''
+client_secret = ''
 redirect_uri = 'http://www.google.com/'
 
 # Assign scope and creates token for Spotipy object
@@ -119,7 +119,6 @@ elif filterOrGenerate == 'G':
 	pUriArray = []
 
 	for tempUri in tUriArray: 
-		print(tempUri[14:])
 		pUriArray.append([tempUri[14:]])
 
 	if len(tempArtistGenre) == 0:
@@ -130,10 +129,6 @@ elif filterOrGenerate == 'G':
 # Prompt 'N' or 'E'
 choiceNE = SprintifyHelper.get_new_or_existing(pUriArray)
 
-"""
-THIS IS THE STARTING LOCATION
-Need to find elegant ways to add to new or existing playlists based on the prior User path
-"""
 
 # Add songs to a new playlist
 if choiceNE.upper() == 'N':
