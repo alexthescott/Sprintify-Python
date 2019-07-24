@@ -1,24 +1,21 @@
-
-# Sprintify: Designed for runners to create BPM oriented Spotify playlists 
-
-Sprintify allow users to define a BPM floor and ceiling, filtering a Spotify playlist so songs within range are kept. Additionally, Sprintify allows users to generate a new playlist. This is accomplished by obtaining song recommendations based on a song seed, which is then filtered by BPM. For both features, users can create a new playlist, or add to one they've already made.
+Define a BPM floor and ceiling and filter a Spotify playlist. Songs within range are kept. Instead of filtering, you can also generate a new playlist using Spotify's song recommendations based on a track. For both features, users can create a new playlist, or add to one they've already made.
 
 # Getting Started
 
-This project uses Python 3. Use a package manager such as pip to install **spotipy**. The easiest way to do this is with pip. If you do not have pip installed, you can try bootstraping from the standard library by typing:
+This project uses Python 3. Use a package manager such as pip to install **spotipy**. If you do not have pip for python3 installed, you can try bootstraping from the standard library by typing:
 
 ```bash
-python -m ensurepip --default-pip
+python3 -m ensurepip --default-pip
 ```
 To check if you currently have pip installed, type:
 ```bash
-pip --version 
+pip3 --version 
 ```
-If you have pip installed, type:
+If you have pip3 installed, type:
 ```bash
-pip install spotipy
+pip3 install spotipy
 ```
-Visit https://packaging.python.org/tutorials/installing-packages/#id13 if you have furthur issues. 
+Visit https://spotipy.readthedocs.io/en/latest/#installation if you have furthur issues installing spotipy. 
 
 In order to run this program, you will need to create a Spotify developer account at https://developer.spotify.com/dashboard/login. Once you have done so, create a Client Id titled "Sprintify" for a Desktop App.
 By doing so, you will have created: 
@@ -27,12 +24,14 @@ By doing so, you will have created:
 
 Open Sprintify.py, and enter your newly created Client ID and Client Secret. This will pair you Spotify account with your instance of Sprintify.py, and will let you create and add to your playlists.
 
-If you do not know your Spotify username, copy one of your existing Spotify playlist Uri's, and locate your username. Go to the Spotify desktop application, click the three dots, select share, then select "Copy Spotify URI." Your username is after "user:"
+Your Spotify username can be found by navigating to one's user page on the Spotify desktop app, sharing the User's Uri, and copying what's after "user:'
 
-In order to run the program, type:
+To run, type:
 ```bash
-Python Sprintify.py
+python3 Sprintify.py
 ```
+Afterwords you will be asked to copy the long google URL from the redirected Spotify Login. Paste this into the terminal!
+
 # Filter Existing Playlist
 <img src="Sprintify_Example1.gif">
 
