@@ -1,8 +1,8 @@
 """
-Spotipy.py for Python 2.7
-Alexander Scott
-October 2018
-Written to filter a Spotify playlist by a BPM range
+Spotipy.py for Python 3
+Alex Scott
+October 2018 - June 2019
+Run faster
 """
 
 import sys
@@ -14,10 +14,9 @@ import SprintifyHelper
 # Create Spotify Object --------------------------------------------------------------------------
 
 # Ask for Spotify Username 
-username = raw_input('Enter Spotify Username:')
+username = input('Enter Spotify Username:')
 
-# https://developer.spotify.com/dashboard/login
-# to create client id and client scret for your project
+# Create @ https://developer.spotify.com/dashboard/login
 client_id = ''
 client_secret = ''
 redirect_uri = 'http://www.google.com/'
@@ -44,18 +43,23 @@ pId.append('NULL')
 pTitles.append('NULL')
 pLength.append(0)
 
-for pCount, playlist in enumerate(playlists['items']):
-    pTitles.append(playlist['name'])
-    pLength.append(playlist['tracks']['total'])
-    pId.append(playlist['id'])
-    pCount += 1
+while playlists:
+	for i, playlist in enumerate(playlists['items']):
+	    pTitles.append(playlist['name'])
+	    pLength.append(playlist['tracks']['total'])
+	    pId.append(playlist['id'])
+	    pCount += 1
+	if playlists['next']:
+		playlists = sp.next(playlists)
+	else:
+		playlists = None
 
 print("")
 filterOrGenerate = SprintifyHelper.get_generate_or_filter()
 
 # Filter Path 
 if filterOrGenerate == 'E':
-	SprintifyHelper.print_user_playlist(playlists)
+	SprintifyHelper.print_user_playlist(username, sp)
 
 	# Record User's Playlist Choice
 	choiceP1 = SprintifyHelper.get_playlist_choice(pCount)
@@ -77,10 +81,7 @@ if filterOrGenerate == 'E':
 	# Analyize and use Choice
 	pUriArray = SprintifyHelper.get_playlist_tracks(username, pId[choiceP1], tempoFloor, tempoCeiling, pLength[choiceP1], sp)
 
-	print("")
-	print("100% Complete")
-	print("------------")
-	print("")
+	print("\n")
 	percentInRange = len(pUriArray)/float(pLength[choiceP1]) * 100
 	print('%.2f'%percentInRange + "% of songs in " + pTitles[choiceP1] + " are in the range " + str(tempoFloor) + "-" + str(tempoCeiling) + (" (BPM)"))
 	print("")
@@ -118,21 +119,16 @@ elif filterOrGenerate == 'G':
 	pUriArray = []
 
 	for tempUri in tUriArray: 
-		print(tempUri[14:])
 		pUriArray.append([tempUri[14:]])
 
 	if len(tempArtistGenre) == 0:
 		newPlaylistName = "Sprintify (" + str(tempoFloor) + '-' + str(tempoCeiling) + ")"
 	else:
-		newPlaylistName = str(tempArtistGenre[0]) + " (" + str(tempoFloor) + '-' + str(tempoCeiling) + ") "
+		newPlaylistName = str(tempArtistGenre[0]) + " (" + str(tempoFloor) + '-' + str(tempoCeiling) + " BPM)"
 
 # Prompt 'N' or 'E'
 choiceNE = SprintifyHelper.get_new_or_existing(pUriArray)
 
-"""
-THIS IS THE STARTING LOCATION
-Need to find elegant ways to add to new or existing playlists based on the prior User path
-"""
 
 # Add songs to a new playlist
 if choiceNE.upper() == 'N':
@@ -145,13 +141,13 @@ if choiceNE.upper() == 'N':
 
 # Add songs to an existing playlist
 else: 
-	SprintifyHelper.print_user_playlist(playlists)
+	SprintifyHelper.print_user_playlist(username, sp)
 	print("")
 	print("Chose a playlist you would like to add the " + str(len(pUriArray)) + " songs")
 
 	# Record User's Playlist Choice 2nd time
 	while True:
-		choiceP2 = raw_input('Enter Playlist Number: ')
+		choiceP2 = input('Enter Playlist Number: ')
 		if choiceP2.isdigit() and float(choiceP2) > 0 and float(choiceP2) <= pCount:
 			choiceP2 = int(choiceP2)
 			break
